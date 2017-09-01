@@ -1,8 +1,9 @@
 import _ from 'lodash';
 import React, { Component } from 'react';
 import './App.css';
-import GridBeenThere from './components/GridBeenThere';
-import GridColors from './components/GridColors';
+// import GridBeenThere from './components/GridBeenThere';
+// import GridColors from './components/GridColors';
+import GridWeirdo from './components/GridWeirdo';
 
 class App extends Component {
   // Initialize state
@@ -14,15 +15,14 @@ class App extends Component {
 
   render() {
     const appContainerStyle = {
-      width: '290px',
+      width: '480px',
       margin: '0 auto'
     };
 
     return (
       <div className="app-container" style={ appContainerStyle }>
         <h2>Test heading</h2>
-        <GridBeenThere />
-        <GridColors />
+        <GridWeirdo />
       </div>
     );
   }
