@@ -16,7 +16,7 @@ class App extends Component {
   render() {
     const appContainerStyle = {
       width: '480px',
-      margin: '0 auto'
+      margin: '40px auto'
     };
 
     return (

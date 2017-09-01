@@ -7,8 +7,9 @@ class GridWeirdo extends Component {
 
     this.state = {
       grid: {},
-      frame: 1,
-      intervalId: null
+      frame: 0,
+      intervalId: null,
+      count: 0
     };
   }
 
@@ -32,7 +33,7 @@ class GridWeirdo extends Component {
           height: '20px',
           width: '20px',
           borderRadius: '3px',
-          margin: '0 2px',
+          margin: '2px 2px',
           display: 'inline-block',
           backgroundColor: bg,
           textAlign: 'center'
@@ -126,14 +127,57 @@ class GridWeirdo extends Component {
           // Row 17
           366, 367, 368, 369, 370, 371, 372, 373, 374, 375, 376, 377, 378, 379
         ];
+      case 2:
+        return [
+          // Row 2
+          69, 70,
+          // Row 3
+          89, 90,
+          // Row 4
+          109, 110,
+          // Row 5
+          129, 130,
+          // Row 6
+          149, 150,
+          // Row 7
+          169, 170,
+          // Row 8
+          189, 190,
+          // Row 9
+          207, 208, 209, 210, 211, 212, 213, 214,
+          // Row 10
+          227, 228, 229, 230, 231, 232, 233, 234,
+          // Row 11
+          246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256,
+          // Row 12
+          262, 263, 266, 267, 268, 269, 270, 271, 272, 273, 274, 275, 276,
+          // Row 13
+          282, 283, 284, 286, 287, 288, 289, 290, 291, 292, 293, 294, 295, 296,
+          // Row 14
+          302, 303, 304, 306, 307, 308, 309, 310, 311, 312, 313, 314, 315, 316, 317,
+          // Row 15
+          323, 324, 326, 327, 328, 329, 330, 331, 332, 333, 334, 335, 336, 337,
+          // Row 16
+          343, 344, 345, 346, 347, 348, 349, 350, 351, 352, 353, 354, 355, 356, 357,
+          // Row 17
+          363, 364, 365, 366, 367, 368, 369, 370, 371, 372, 373, 374, 375, 376, 377,
+          // Row 18
+          383, 384, 385, 386, 387, 388, 389, 390, 391, 392, 393, 394, 395, 396, 397
+        ];
       default:
         return [];
     }
   }
 
   stepFrame() {
-    const { frame } = this.state;
-    this.setState({ frame: frame ? 0 : 1 });
+    const { frame, count } = this.state;
+    if (count > 15) {
+      this.setState({ frame: 2, count: 0 });
+      this.buildGrid();
+      this.stopAnimation();
+    } else {
+      this.setState({ frame: frame ? 0 : 1, count: count+1 });
+    }
     this.buildGrid();
   }
 
@@ -205,8 +249,8 @@ class GridWeirdo extends Component {
     return (
       <div className="grid-container">
         <h2>Grid</h2>
-        { this.renderGridCells() }
         { this.renderGridControls() }
+        { this.renderGridCells() }
       </div>
     );
   }
