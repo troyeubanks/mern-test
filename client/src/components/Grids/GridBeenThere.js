@@ -1,6 +1,6 @@
 import _ from 'lodash';
 import React, { Component } from 'react';
-import { shuffleArray } from '../lib/ArrayHelpers';
+import { shuffleArray } from '../../lib/ArrayHelpers';
 
 class GridBeenThere extends Component {
   constructor(props) {

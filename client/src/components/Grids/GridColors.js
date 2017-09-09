@@ -1,6 +1,5 @@
 import _ from 'lodash';
 import React, { Component } from 'react';
-import { shuffleArray } from '../lib/ArrayHelpers';
 
 class GridColors extends Component {
   constructor(props) {
@@ -85,7 +84,6 @@ class GridColors extends Component {
   }
 
   reorderGrid = () => {
-    const { grid } = this.state;
     const colors = {
       r: Math.round(Math.random() * 100),
       g: Math.round(Math.random() * 100),
@@ -95,7 +93,7 @@ class GridColors extends Component {
     this.setState({
       colorNodes: colors
     });
-    
+
     this.buildGrid();
   }
 

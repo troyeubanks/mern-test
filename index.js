@@ -14,14 +14,12 @@ app.get('/api/songs', (req, res) => {
   };
 
   res.json(testReponse);
-
-  console.log('sent response');
 });
 
-app.get('*', (req, res) => {
+app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname+'/client/build/index.html'));
 });
 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 3000;
 app.listen(port);
 console.log(`App running on port ${port}`);

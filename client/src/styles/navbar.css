@@ -1,0 +1,44 @@
+/*
+purple: #966b9d
+red: #c98686
+yellow: #f2b880
+white: #fff4ec
+sand: #e7cfbc
+*/
+
+#navbar-container {
+  position: relative;
+  background-color: #966b9d;
+  display: block;
+  width: 200px;
+  height: 100%;
+}
+
+.navbar-list {
+  color: #fff4ec;
+  background-color: #966b9d;
+  position: relative;
+  list-style: none;
+  padding: 20px 10px 0 10px;
+  margin: 0;
+  font-size: 24px;
+}
+
+.navbar-element {
+  margin: 2px;
+  white-space: nowrap;
+  border-bottom: 2px solid #966b9d;
+  cursor: pointer;
+}
+
+.navbar-element:hover {
+  border-bottom: 2px solid #f2b880;
+}
+
+.navbar-element span {
+  display: inline-block;
+}
+
+.navbar-element i {
+  margin: 10px;
+}

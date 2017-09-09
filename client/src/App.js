@@ -1,9 +1,13 @@
 import _ from 'lodash';
 import React, { Component } from 'react';
 import './App.css';
-// import GridBeenThere from './components/GridBeenThere';
-// import GridColors from './components/GridColors';
-import GridWeirdo from './components/GridWeirdo';
+
+import { Route } from 'react-router-dom';
+import Home from './components/Home';
+import GridBeenThere from './components/Grids/GridBeenThere';
+import GridColors from './components/Grids/GridColors';
+import GridWeirdo from './components/Grids/GridWeirdo';
+
 
 class App extends Component {
   // Initialize state
@@ -14,15 +18,12 @@ class App extends Component {
   }
 
   render() {
-    const appContainerStyle = {
-      width: '480px',
-      margin: '40px auto'
-    };
-
     return (
-      <div className="app-container" style={ appContainerStyle }>
-        <h2>Test heading</h2>
-        <GridWeirdo />
+      <div id="app-container">
+        <Route exact path="/" component={ Home } />
+        <Route exact path="/frequency" component={ GridBeenThere } />
+        <Route exact path="/colors" component={ GridColors } />
+        <Route exact path="/weirdo" component={ GridWeirdo } />
       </div>
     );
   }

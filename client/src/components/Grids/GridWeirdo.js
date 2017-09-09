@@ -89,7 +89,6 @@ class GridWeirdo extends Component {
           // Row 18
           387, 388, 389, 390, 391, 392, 393, 394, 395, 396, 397, 398, 399
         ];
-        break;
       case 1:
         return [
           // Row 0
