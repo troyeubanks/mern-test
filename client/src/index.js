@@ -10,11 +10,11 @@ import Navbar from './components/Navbar';
 ReactDOM.render((
   <BrowserRouter>
     <Grid>
-      <Row>
-        <Col md={ 3 } xs={ 4 }>
+      <Row id="layout-row">
+        <Col md={ 3 } xs={ 4 } id="layout-navbar-container">
           <Navbar />
         </Col>
-        <Col md={ 9 } xs={ 8 }>
+        <Col md={ 9 } xs={ 8 } id="layout-app-container">
           <App />
         </Col>
       </Row>

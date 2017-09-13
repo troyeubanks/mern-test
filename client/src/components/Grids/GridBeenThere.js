@@ -131,7 +131,7 @@ class GridBeenThere extends Component {
   }
 
   renderGridControls() {
-    var controls = this.getGridControls();
+    const controls = this.getGridControls();
     return (
       <div className="grid-control-container">
         {
@@ -153,11 +153,19 @@ class GridBeenThere extends Component {
 
   render() {
     return (
-      <div className="grid-container">
-        <h2>Grid</h2>
-        { this.renderGridCells() }
-        { this.renderGridControls() }
-        Reordered: { this.state.reorderCount } times
+      <div className="grid-layout-container">
+        <p className="grid-explanation">
+          Each of the grid cells below is tracked whenever 'Reorder Grid' is clicked.<br/>
+          If the cell has been in that particular position/index before, it will be white(ish).
+          If it hasn't, it'll be black.<br/>
+          Auto reordering will continuously reorder the grid until all cells have been
+          colored white.
+        </p>
+        <div className="grid-container">
+          { this.renderGridCells() }
+          { this.renderGridControls() }
+          Reordered: { this.state.reorderCount } times
+        </div>
       </div>
     );
   }

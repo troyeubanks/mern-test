@@ -37,18 +37,16 @@ class Navbar extends Component {
   buildNavbar() {
     const elements = this.getNavbarElements();
 
-    return elements.map((element) => {
+    return elements.map((element, index) => {
       return (
-        <Row>
+        <Row key={ index } className="navbar-element">
           <NavItem eventKey={ element.id } href={ element.link }>
-            <Link to={ element.link }>
-              <Col xs={ 3 } md={ 2 }>
-                <i className={ `fa ${element.icon}` }></i>
-              </Col>
-              <Col xs={ 9 } md={ 10 }>
-                <span>{ element.text }</span>
-              </Col>
-            </Link>
+            <Col xs={ 3 } md={ 2 }>
+              <i className={ `fa ${element.icon}` }></i>
+            </Col>
+            <Col xs={ 9 } md={ 10 }>
+              <span>{ element.text }</span>
+            </Col>
         </NavItem>
         </Row>
       );
@@ -57,7 +55,7 @@ class Navbar extends Component {
 
   render() {
     return (
-      <Nav bsStyle="pills" onSelect={ this.handleSelect } stacked={ true }>
+      <Nav bsStyle="pills" onSelect={ this.handleSelect } stacked={ true } className="navbar-list">
         { this.buildNavbar() }
       </Nav>
     );

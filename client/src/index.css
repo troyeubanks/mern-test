@@ -8,4 +8,14 @@ body, html {
 
 #root {
   height: 100%;
+  margin: 0;
+}
+
+div[data-reactroot] {
+  height: 100%;
+  margin: 0;
+}
+
+#layout-row {
+  height: 100%;
 }
